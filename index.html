@@ -4,51 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>code.school ITI examples</title>
+    <title>My page</title>
     <style>
-        body {
-            font-size: 16px;
-            padding: 20px;
-        }
-        a.lesson {
-            position: relative;
-            display: inline-block;
-            padding: 8px 16px;
-            margin: 4px 0px;
-            border-left: #505050 solid 4px;
-            color: #505050;
-            background: #50505015;
-        }
-        a.lesson:hover {
-            background-color: #505050;
-            color: #ffffff;
-            border-left-color: #c0c0c0;
-            text-decoration: none;
-            transition: 1s background-color, 
-                1s color, 
-                1s border-left-color;
-        }
+/*
+Palette colors
+DarkBlue    #194977
+Blue        #2697d9
+LightBlue   #33c6f2
+DarkYellow  #ffe135
+LightYellow #fefd1b
+White       #ffffff
+DarkGreen   #109755
+LightGreen  #15ffaa
+*/
+:root {
+    --color-primary: #08968a;
+    --color-secondary: #fcac34;
+    --color-accent: #109755;
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+}
+body {
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+.short-info {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.62fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas:
+        "photo name"
+        "photo about"
+        "links links";
+    overflow: hidden;
+    height: 100vh;
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    margin: 0px;
+}
+.photo-block {
+    grid-area: photo;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px;
+}
+.photo-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url(https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkCQdg9aCbENxhaE15O_kPTaaKTM5SRkZCeTgDn6uOyic);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.name-block {
+    grid-area: name;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 16px;
+    font-size: 300%;
+    color: var(--color-secondary);
+}
+.about-me-block {
+    position: relative;
+    grid-area: about;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px;
+    font-size: 120%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.about-me-block>p {
+    max-width: 400px;
+    padding: 0px;
+    margin: 0px;
+}
+.links-block {
+    grid-area: links;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--color-secondary);
+}
+.links-block>a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 64px;
+    margin: 16px;
+    color: #194977;
+    background: var(--color-secondary);
+}
+
+.links-block>a.link-vk {
+    background: 
+        url(https://brand.vkforms.ru/static/media/logo_color_198.231228dd.svg) 
+        no-repeat 50% / contain;
+}
+.links-block>a.link-facebook {
+    background: 
+        url(https://en.facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png)
+        no-repeat 50% / contain;
+}
+.links-block>a.link-instagram {
+    background: url(https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=64) 
+    no-repeat 50% / contain;
+}
+.links-block>a.link-twitter {
+    background: url(https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-64.png) 
+    no-repeat 50% / contain;
+}
+
+
+@media (max-width: 480px) {
+    .photo-image {
+        width: 120px;
+        height: 120px;
+    }
+    .name-block {
+        font-size: 180%;
+        padding: 8px;
+    }
+    .about-me-block {
+        font-size: 100%;
+        padding: 8px;
+    }
+    .anchor-link {
+        margin: 8px;
+    }
+}
+@media (max-width: 310px) {
+    .photo-image {
+        width: 64px;
+        height: 64px;
+    }
+    .name-block {
+        font-size: 120%;
+        padding: 8px;
+    }
+    .about-me-block {
+        font-size: 100%;
+        padding: 8px;
+    }
+    .anchor-link {
+        margin: 8px;
+    }
+}
+@media (min-width: 500px) {
+    .photo-image {
+        width: 200px;
+        height: 200px;
+    }
+    .name-block {
+        font-size: 300%;
+        padding: 8px;
+    }
+    .about-me-block {
+        font-size: 200%;
+        padding: 8px;
+    }
+    .anchor-link {
+        margin: 8px;
+    }
+}
     </style>
 </head>
 <body>
-
-<h1>This is war</h1>> 
-
-
-    <h2>Lessons examples for code.school ITI</h2>
-    <a class="lesson" href="./lesson_tags/index.html" title=" ">Ознакомление с некоторыми основными тегами</a>
-    <br>
-    <a class="lesson" href="./lesson_text/index.html" title=" ">Стилизация текста</a>
-    <br>
-    <a class="lesson" href="./lesson_links/index.html" title=" ">Ссылки</a>
-    <br>
-    <a class="lesson" href="./lesson_js/index.html" title=" ">JavaScript</a>
-    <br>
-    <a class="lesson" href="./lesson_artbox/index.html" title=" ">X-tree</a>
-    <br>
-    <a class="lesson" href="./lesson_x0/index.html" title=" ">TicTacToe game</a>
-    <br>
-    <a class="lesson" href="./lesson_transformations/index.html" title=" ">Transformations</a>
-    <br>
+    <div id="page1" class="short-info">
+        <div class="photo-block">
+            <div class="photo-image"></div>
+        </div>
+        <div class="name-block">
+            Andy Dark
+        </div>
+        <div class="about-me-block">
+            <p>
+                Выдра-держит гитару, потому, что, она ей нравится.
+            </p>
+        </div>
+        <div class="links-block">
+            <a href="#page1" class="link-vk"></a>
+            <a href="#page2" class="link-facebook"></a>
+            <a href="#page2" class="link-instagram"></a>
+    </div>
+    
 </body>
 </html>
