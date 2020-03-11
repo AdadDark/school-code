@@ -6,218 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My page</title>
-    <style>
-        /*
-Palette colors
-DarkBlue    #194977
-Blue        #2697d9
-LightBlue   #33c6f2
-DarkYellow  #ffe135
-LightYellow #fefd1b
-White       #ffffff
-DarkGreen   #109755
-LightGreen  #15ffaa
-*/
-        :root {
-            --color-primary: #08968a;
-            --color-secondary: #fcac34;
-            --color-accent: #109755;
-            --color-text-dark: #333333;
-            --color-text-light: #ffffff;
-        }
-        html{
-            scroll-behavior: smooth;
-        }
-        body {
-            font-size: 16px;
-            padding: 0px;
-            margin: 0px;
-        }
-        .page-block{
-            background: var(--color-primary);
-            min-height: 100vh;
-            height:auto;
-            padding: 0px;
-            margin: 0px;
-
-        }
-        .page-block> h3{
-            margin:0px;
-            padding: 0px;
-        }
-        .short-info {
-            position: relative;
-            display: grid;
-            grid-template-columns: 1fr 1.62fr;
-            grid-template-rows: 1fr 1fr auto;
-            grid-template-areas:
-                "photo name"
-                "photo about"
-                "links links";
-            overflow: hidden;
-            height: auto;
-            min-height: 100vh;
-            background: var(--color-primary);
-            color: var(--color-text-light);
-            margin: 0px;
-        }
-
-        .photo-block {
-            grid-area: photo;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 16px;
-        }
-
-        .photo-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 20%;
-            background-image: url(https://cs9.pikabu.ru/images/big_size_comm/2018-03_3/152082608614347585.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .name-block {
-            grid-area: name;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            padding: 16px;
-            font-size: 300%;
-            color: var(--color-secondary);
-        }
-
-        .about-me-block {
-            position: relative;
-            grid-area: about;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            padding: 16px;
-            font-size: 120%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .about-me-block>p {
-            max-width: 400px;
-            padding: 0px;
-            margin: 0px;
-        }
-
-        .links-block {
-            grid-area: links;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            background: var(--color-secondary);
-        }
-
-        .links-block>a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            height: 64px;
-            width: 64px;
-            margin: 16px;
-            color: #194977;
-            background: var(--color-secondary);
-        }
-
-        .links-block>a.link-vk {
-            background:
-                url(https://brand.vkforms.ru/static/media/logo_color_198.231228dd.svg) no-repeat 50% / contain;
-        }
-
-        .links-block>a.link-facebook {
-            background:
-                url(https://en.facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png) no-repeat 50% / contain;
-        }
-
-        .links-block>a.link-instagram {
-            background: url(https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=64) no-repeat 50% / contain;
-        }
-
-        .links-block>a.link-twitter {
-            background: url(https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-64.png) no-repeat 50% / contain;
-        }
-.link-next{
-    display: inline-flex;
-    position: relative;
-    align-self: center;
-    background: var(--color-primary);
-    color:var(--color-secondary);
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-        @media (max-width: 480px) {
-            .photo-image {
-                width: 120px;
-                height: 120px;
-            }
-
-            .name-block {
-                font-size: 180%;
-                padding: 8px;
-            }
-
-            .about-me-block {
-                font-size: 100%;
-                padding: 8px;
-            }
-
-            .anchor-link {
-                margin: 8px;
-            }
-        }
-
-        @media (max-width: 310px) {
-            .photo-image {
-                width: 64px;
-                height: 64px;
-            }
-
-            .name-block {
-                font-size: 120%;
-                padding: 8px;
-            }
-
-            .about-me-block {
-                font-size: 100%;
-                padding: 8px;
-            }
-
-            .anchor-link {
-                margin: 8px;
-            }
-        }
-
-        @media (min-width: 500px) {
-            .photo-image {
-                width: 200px;
-                height: 200px;
-            }
-
-            .name-block {
-                font-size: 300%;
-                padding: 8px;
-            }
-
-            .about-me-block {
-                font-size: 200%;
-                padding: 8px;
-            }
-
-            .anchor-link {
-                margin: 8px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="res/styles/main.css">
 </head>
 
 <body>
@@ -232,21 +21,32 @@ LightGreen  #15ffaa
             <p>
                 Выдра держит гитару, потому, что, она ей нравится.
             </p>
-            <a href="#page2" class="link-next">
+            <a href="#page-gallery" class="link-next">
                 Далее
             </a>
         </div>
 
         <div class="links-block">
-            <a href="#page1" class="link-vk"></a>
-            <a href="#page2" class="link-facebook"></a>
-            <a href="#page3" class="link-instagram"></a>
+            <a href="https://www.google.com/search?q=%D0%B2%D0%BA&rlz=1C1GCEU_ruMD865MD865&oq=%D0%B2%D0%BA&aqs=chrome..69i57.1495j0j9&sourceid=chrome&ie=UTF-8&safe=active&ssui=on" class="link-vk"></a>
+            <a href="https://www.google.com/search?rlz=1C1GCEU_ruMD865MD865&q=%D1%84%D0%B5%D0%B9%D1%81%D0%B1%D1%83%D0%BA&spell=1&sa=X&ved=2ahUKEwiUsaTR9ZLoAhUqzqYKHWgKBpgQBSgAegQIFxAn&biw=777&bih=952&safe=active&ssui=on" class="link-facebook"></a>
+            <a href="https://www.youtube.com/?hl=ru" class="link-YouTube"></a>
         </div>
     </div>
     
-    <div id="page2" class="page-block">
-        <h3> Блок с проблемами #2 </h3>
+    <div id="page-gallery" class="page">
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
     </div>
+
+
+
     <div id="page3" class="page-block">
         <h3> Блок с проблемами #3 </h3>
     </div>
